@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Исполнитель" id="31">
+			<DataPath>Запись.Исполнитель</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<SkipOnInput>true</SkipOnInput>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="ИсполнительКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ИсполнительРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<InputField name="ДеньРаботы" id="1">
+			<DataPath>Запись.ДеньРаботы</DataPath>
+			<ContextMenu name="ДеньРаботыКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДеньРаботыРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Начало" id="34">
+			<DataPath>Запись.Начало</DataPath>
+			<SkipOnInput>true</SkipOnInput>
+			<ContextMenu name="НачалоКонтекстноеМеню" id="35"/>
+			<ExtendedTooltip name="НачалоРасширеннаяПодсказка" id="36"/>
+			<Events>
+				<Event name="OnChange">НачалоПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Задача" id="10">
+			<DataPath>Запись.Задача</DataPath>
+			<DefaultItem>true</DefaultItem>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Исполнитель</xr:Name>
+					<xr:DataPath xsi:type="xs:string">Запись.Исполнитель</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<Font bold="true" kind="AutoFont"/>
+			<ContextMenu name="ЗадачаКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ЗадачаРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ЗадачаОписание" id="28">
+			<DataPath>Запись.Задача.Описание</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<SkipOnInput>true</SkipOnInput>
+			<ContextMenu name="ЗадачаОписаниеКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ЗадачаОписаниеРасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<InputField name="Окончание" id="37">
+			<DataPath>Запись.Окончание</DataPath>
+			<ContextMenu name="ОкончаниеКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="ОкончаниеРасширеннаяПодсказка" id="39"/>
+			<Events>
+				<Event name="OnChange">ОкончаниеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<CheckBoxField name="План" id="4">
+			<DataPath>Запись.План</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПланКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ПланРасширеннаяПодсказка" id="6"/>
+		</CheckBoxField>
+		<CheckBoxField name="Передано" id="7">
+			<DataPath>Запись.Передано</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПереданоКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПереданоРасширеннаяПодсказка" id="9"/>
+		</CheckBoxField>
+		<InputField name="ОтделЗаказчик" id="13">
+			<DataPath>Запись.ОтделЗаказчик</DataPath>
+			<ContextMenu name="ОтделЗаказчикКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ОтделЗаказчикРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Заказчик" id="16">
+			<DataPath>Запись.Заказчик</DataPath>
+			<ContextMenu name="ЗаказчикКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ЗаказчикРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="Статус" id="19">
+			<DataPath>Запись.Статус</DataPath>
+			<ContextMenu name="СтатусКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="Минут" id="22">
+			<DataPath>Запись.Минут</DataPath>
+			<ContextMenu name="МинутКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="МинутРасширеннаяПодсказка" id="24"/>
+			<Events>
+				<Event name="OnChange">МинутПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Часов" id="25">
+			<DataPath>Запись.Часов</DataPath>
+			<ContextMenu name="ЧасовКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ЧасовРасширеннаяПодсказка" id="27"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.Задачи</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Терминал сбора данных</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<VerticalSpacing>Double</VerticalSpacing>
+	<Customizable>false</Customizable>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЭмитацияСканера" id="27">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.ЭмитацияСканера</CommandName>
+				<ExtendedTooltip name="ФормаЭмитацияСканераРасширеннаяПодсказка" id="28"/>
+			</Button>
+			<Button name="ФормаВводПоШтучноИзменить" id="21">
+				<Type>CommandBarButton</Type>
+				<OnlyInAllActions>false</OnlyInAllActions>
+				<CommandName>Form.Command.ВводПоШтучноИзменить</CommandName>
+				<RepresentationInContextMenu>OnlyInContextMenu</RepresentationInContextMenu>
+				<ExtendedTooltip name="ФормаВводПоШтучноИзменитьРасширеннаяПодсказка" id="22"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКалуга" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа калуга</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа калуга</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКалугаРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<Button name="РазмещениеТовара" id="15">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.РазмещениеТовара</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приемка</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="РазмещениеТовараРасширеннаяПодсказка" id="16"/>
+				</Button>
+				<Button name="Отргузка" id="7">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<CommandName>Form.Command.Отргузка</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отгрузка</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтргузкаРасширеннаяПодсказка" id="8"/>
+				</Button>
+				<Button name="перемещение" id="5">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<CommandName>Form.Command.перемещение</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<ExtendedTooltip name="перемещениеРасширеннаяПодсказка" id="6"/>
+				</Button>
+				<Button name="Размещение" id="3">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<CommandName>Form.Command.Размещение</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<ExtendedTooltip name="РазмещениеРасширеннаяПодсказка" id="4"/>
+				</Button>
+				<Button name="Приемка" id="1">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<CommandName>Form.Command.Приемка</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<ExtendedTooltip name="ПриемкаРасширеннаяПодсказка" id="2"/>
+				</Button>
+				<Button name="ОтборТовара" id="13">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОтборТовара</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор товара</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтборТовараРасширеннаяПодсказка" id="14"/>
+				</Button>
+				<Button name="ОтгрузочныйЛист" id="19">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОтгрузочныйЛист</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отгрузочный лист</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтгрузочныйЛистРасширеннаяПодсказка" id="20"/>
+				</Button>
+				<Button name="ВнутреннийрасходДляСПб" id="25">
+					<Type>UsualButton</Type>
+					<Height>1</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ВнутреннийрасходДляСПб</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пополнение СПб</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ВнутреннийрасходДляСПбРасширеннаяПодсказка" id="26"/>
+				</Button>
+				<Button name="СведенияОНоменклатуре" id="23">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.СведенияОНоменклатуре</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о номенклатуре</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СведенияОНоменклатуреРасширеннаяПодсказка" id="24"/>
+				</Button>
+				<Button name="УпаковочныеЛисты" id="53">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.УпаковочныеЛисты</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Упаковочные листы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="УпаковочныеЛистыРасширеннаяПодсказка" id="54"/>
+				</Button>
+				<Button name="Инвентаризация" id="51">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.Инвентаризация</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвентаризация</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ИнвентаризацияРасширеннаяПодсказка" id="52"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСПб" id="31">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа с пб</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа с пб</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСПбРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<Button name="ПриемкаПоКоробамСПБ" id="29">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ПриемкаПоКоробам</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приемка коробов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ПриемкаПоКоробамСПБРасширеннаяПодсказка" id="30"/>
+				</Button>
+				<Button name="РазместитьТоварыСПб" id="35">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.РазместитьТоварыСПб</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размещение товаров</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="РазместитьТоварыСПбРасширеннаяПодсказка" id="36"/>
+				</Button>
+				<Button name="ОтборТовараСПб" id="37">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОтборТовараСПб</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор товара</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтборТовараСПбРасширеннаяПодсказка" id="38"/>
+				</Button>
+				<Button name="ОтгрузочныйЛистСПб" id="39">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.ОтгрузочныйЛист</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отгрузочный лист</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтгрузочныйЛистСПбРасширеннаяПодсказка" id="40"/>
+				</Button>
+				<Button name="СведенияОНоменклатуре1" id="43">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.СведенияОНоменклатуре</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения о номенклатуре</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СведенияОНоменклатуре1РасширеннаяПодсказка" id="44"/>
+				</Button>
+				<Button name="Инвентаризация_" id="49">
+					<Type>UsualButton</Type>
+					<Height>2</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+					<CommandName>Form.Command.Инвентаризация</CommandName>
+					<BackColor>style:ВысокийПриоритетДокумента</BackColor>
+					<Font ref="style:TextFont" height="12" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Инвентаризация</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Инвентаризация_РасширеннаяПодсказка" id="50"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ТСД_РСК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВводПоШтучно" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод по штучно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойСклад" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Приемка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приемка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приемка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Приемка</Action>
+		</Command>
+		<Command name="Размещение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размещение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размещение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Размещение</Action>
+		</Command>
+		<Command name="перемещение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перемещение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перемещение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>перемещение</Action>
+		</Command>
+		<Command name="Отргузка" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отргузка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отргузка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отргузка</Action>
+		</Command>
+		<Command name="ОтборТовара" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор товара</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор товара</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтборТовара</Action>
+		</Command>
+		<Command name="РазмещениеТовара" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размещение товара</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размещение товара</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазмещениеТовара</Action>
+		</Command>
+		<Command name="ОтгрузочныйЛист" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отгрузочный лист</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отгрузочный лист</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтгрузочныйЛист</Action>
+		</Command>
+		<Command name="ВводПоШтучноИзменить" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод по штучно изменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод по штучно изменить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВводПоШтучноИзменить</Action>
+		</Command>
+		<Command name="СведенияОНоменклатуре" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о номенклатуре</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о номенклатуре</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СведенияОНоменклатуре</Action>
+		</Command>
+		<Command name="ВнутреннийрасходДляСПб" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутреннийрасход для с пб</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутреннийрасход для с пб</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВнутреннийрасходДляСПб</Action>
+		</Command>
+		<Command name="ЭмитацияСканера" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эмитация сканера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эмитация сканера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭмитацияСканера</Action>
+		</Command>
+		<Command name="ПриемкаПоКоробам" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приемка по коробам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приемка по коробам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПриемкаПоКоробам</Action>
+		</Command>
+		<Command name="РазместитьТоварыСПб" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разместить товары</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разместить товары с пб</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазместитьТоварыСПб</Action>
+		</Command>
+		<Command name="ОтборТовараСПб" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор товара с пб</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор товара с пб</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтборТовараСПб</Action>
+		</Command>
+		<Command name="Инвентаризация" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентаризация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентаризация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Инвентаризация</Action>
+		</Command>
+		<Command name="УпаковочныеЛисты" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Упаковочные листы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Упаковочные листы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УпаковочныеЛисты</Action>
+		</Command>
+	</Commands>
+</Form>

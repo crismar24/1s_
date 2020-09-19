@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<ExternalDataProcessor uuid="811df95f-d352-4fdf-bb78-4a82940c40ed">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
+				<xr:ObjectId>54510df9-087d-4dc3-afcd-1709c376212d</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalDataProcessorObject.ТСД_РСК" category="Object">
+				<xr:TypeId>4419f534-094a-4c0e-a54b-fd46af33e831</xr:TypeId>
+				<xr:ValueId>d47f5a30-760f-43b1-a384-c215ded7c3b6</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ТСД_РСК</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ТСД РСК</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm>ExternalDataProcessor.ТСД_РСК.Form.Начало</DefaultForm>
+			<AuxiliaryForm/>
+		</Properties>
+		<ChildObjects>
+			<Form>ВходСканирование</Form>
+			<Form>Начало</Form>
+			<Form>СписокПоступлений</Form>
+			<Form>Размещение</Form>
+			<Form>РазмещениеТЗ</Form>
+			<Form>ВводКоличестваРазмещениеТЗ</Form>
+			<Form>ДействияСНоменклатурой</Form>
+			<Form>ПолучитьКоличество</Form>
+			<Form>СписокРеализаций</Form>
+			<Form>Отбор</Form>
+			<Form>ВводКоличестваОтбор</Form>
+			<Form>ПолучитьДипазонКоробов</Form>
+			<Form>ПолныйСписокПоКоробкам</Form>
+			<Form>ВводКоличестваОтборПолныйСписокПоКоробкам</Form>
+			<Form>СведенияОНоменклатуре</Form>
+			<Form>КОтборуПоЗаданиямПодробнее</Form>
+			<Form>СписокОтгрузочныхЛистов</Form>
+			<Form>ОтгрузкаПоЛисту</Form>
+			<Form>ВыборУпаковки</Form>
+			<Form>НеПринятыеПринятыеКоробаОтгрузкаПоЛисту</Form>
+			<Form>ВводКоличества</Form>
+			<Form>СписокПополнениеСпб</Form>
+			<Form>ПополнениеСпбКоробки</Form>
+			<Form>ПополнениеСпбТовары</Form>
+			<Form>ОтборСПб</Form>
+			<Form>ВыборВариантаИнвентаризации</Form>
+			<Form>СписокПервичныхВводовДанных</Form>
+			<Form>ПервичныйВводИнвентаризации</Form>
+			<Form>ПервичныйВводИнвентаризацииТаблица</Form>
+			<Form>ВводКоличестваИнвентаризация</Form>
+			<Form>ВводКоличестваИнвентаризацияНоваяНомеклатура</Form>
+			<Form>ВторичныйПоследующиеПросчеты</Form>
+			<Form>ВторичныйПоследующиеПросчетыТаблица</Form>
+			<Form>СписокИнвентаризаций</Form>
+			<Form>РСК_СписокЯчеек</Form>
+			<Form>РСК_ПервичныйВводИнвентаризации</Form>
+			<Form>РСК_ВводКоличестваИнвентаризация</Form>
+			<Form>РСК_СписокЯчеекПоЗаданиюИсполнителя</Form>
+			<Form>РСК_ЗаданиеИсполнителя</Form>
+			<Form>РСК_ВводКоличестваИнвентаризацияНоваяВручную</Form>
+			<Form>ПостМесто</Form>
+			<Form>УпаковочныеЛистыСписок</Form>
+			<Form>УпаковочныйЛист</Form>
+		</ChildObjects>
+	</ExternalDataProcessor>
+</MetaDataObject>

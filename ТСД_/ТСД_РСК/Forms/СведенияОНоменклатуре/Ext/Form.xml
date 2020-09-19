@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Сведения о номенклатуре</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="НадписьОСканировании" id="1" DisplayImportance="VeryHigh">
+			<Visible>false</Visible>
+			<VerticalStretch>false</VerticalStretch>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отсканир. штрихкод товара или введите ниже:</v8:content>
+				</v8:item>
+			</Title>
+			<BackColor>web:PaleGoldenrod</BackColor>
+			<ContextMenu name="НадписьОСканированииКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НадписьОСканированииРасширеннаяПодсказка" id="3"/>
+		</LabelDecoration>
+		<InputField name="Номенклатура" id="4" DisplayImportance="VeryHigh">
+			<DataPath>Номенклатура</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отсканир. штрихкод товара или введите ниже</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:TextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<TitleLocation>Top</TitleLocation>
+			<BackColor>web:PaleGreen</BackColor>
+			<ContextMenu name="НоменклатураКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НоменклатураРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">НоменклатураПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="НоменклатураАртикул" id="16" DisplayImportance="VeryHigh">
+			<DataPath>Номенклатура.Артикул</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Font ref="style:TextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<ContextMenu name="НоменклатураАртикулКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="НоменклатураАртикулРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="НоменклатураНаименование" id="7" DisplayImportance="VeryHigh">
+			<DataPath>Номенклатура.Description</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="НоменклатураНаименованиеКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="НоменклатураНаименованиеРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="НоменклатураПроизводитель" id="13" DisplayImportance="VeryHigh">
+			<DataPath>Номенклатура.Производитель</DataPath>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<ContextMenu name="НоменклатураПроизводительКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="НоменклатураПроизводительРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="ШК" id="22" DisplayImportance="VeryHigh">
+			<DataPath>ШК</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="ШККонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ШКРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="Упаковка" id="19" DisplayImportance="VeryHigh">
+			<DataPath>Упаковка</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Width>12</Width>
+			<HorizontalStretch>true</HorizontalStretch>
+			<OpenButton>false</OpenButton>
+			<ContextMenu name="УпаковкаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="УпаковкаРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="УпаковкаКоэффициент" id="10" DisplayImportance="VeryHigh">
+			<DataPath>Упаковка.Коэффициент</DataPath>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Width>12</Width>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="УпаковкаКоэффициентКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="УпаковкаКоэффициентРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="Остаток" id="31" DisplayImportance="VeryHigh">
+			<DataPath>Остатки[0].Остаток</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>false</MultiLine>
+			<ChooseType>false</ChooseType>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="ОстатокКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="ОстатокРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<UsualGroup name="ГруппаКОтборуПоЗаданию" id="52" DisplayImportance="VeryHigh">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа к отбору по заданию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа к отбору по заданию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКОтборуПоЗаданиюРасширеннаяПодсказка" id="53"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияНадписьКОтборуПоЗаданию" id="56" DisplayImportance="VeryHigh">
+					<TextColor>style:FormTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К отбору по заданиям:</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияНадписьКОтборуПоЗаданиюКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ДекорацияНадписьКОтборуПоЗаданиюРасширеннаяПодсказка" id="58"/>
+				</LabelDecoration>
+				<Button name="КОтборуПоЗаданиямПодробнее" id="54" DisplayImportance="VeryHigh">
+					<Type>UsualButton</Type>
+					<VerticalStretch>true</VerticalStretch>
+					<CommandName>Form.Command.КОтборуПоЗаданиямПодробнее</CommandName>
+					<ExtendedTooltip name="КОтборуПоЗаданиямПодробнееРасширеннаяПодсказка" id="55"/>
+				</Button>
+				<InputField name="КОтборуПоЗаданию" id="43" DisplayImportance="VeryHigh">
+					<DataPath>Остатки[0].КОтборуПоЗаданию</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К отбору по заданиям</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<MultiLine>false</MultiLine>
+					<OpenButton>false</OpenButton>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="КОтборуПоЗаданиюКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="КОтборуПоЗаданиюРасширеннаяПодсказка" id="45"/>
+					<Events>
+						<Event name="StartChoice">КОтборуПоЗаданиюНачалоВыбора</Event>
+						<Event name="Opening">КОтборуПоЗаданиюОткрытие</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СвободныйОстаток" id="37" DisplayImportance="VeryHigh">
+			<DataPath>Остатки[0].СвободныйОстаток</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<Wrap>false</Wrap>
+			<MultiLine>false</MultiLine>
+			<ChooseType>false</ChooseType>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="СвободныйОстатокКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="СвободныйОстатокРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="ВНаличииОстаток" id="40" DisplayImportance="VeryHigh">
+			<DataPath>Остатки[0].ВНаличииОстаток</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>false</MultiLine>
+			<ChooseType>false</ChooseType>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="ВНаличииОстатокКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ВНаличииОстатокРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="ОтбираетсяНаТСД" id="46" DisplayImportance="VeryHigh">
+			<DataPath>Остатки[0].ОтбираетсяНаТСД</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>false</MultiLine>
+			<ChooseType>false</ChooseType>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="ОтбираетсяНаТСДКонтекстноеМеню" id="47"/>
+			<ExtendedTooltip name="ОтбираетсяНаТСДРасширеннаяПодсказка" id="48"/>
+		</InputField>
+		<InputField name="ОтобраноНаТСД" id="49" DisplayImportance="VeryHigh">
+			<DataPath>Остатки[0].ОтобраноНаТСД</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<MultiLine>false</MultiLine>
+			<ChooseType>false</ChooseType>
+			<TextEdit>false</TextEdit>
+			<ContextMenu name="ОтобраноНаТСДКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="ОтобраноНаТСДРасширеннаяПодсказка" id="51"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ТСД_РСК</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Номенклатура" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Упаковка" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ед. изм.</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.УпаковкиНоменклатуры</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШК" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Штрихкод</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойСклад" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Остатки" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остатки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Остаток" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СвободныйОстаток" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Свободный остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Склад" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВНаличииОстаток" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В наличии остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КОтборуПоЗаданию" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К отбору по заданию</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтбираетсяНаТСД" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбирается на ТСД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтобраноНаТСД" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отобрано на ТСД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Отборы" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="СкладскоеЗадание" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Складское задание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.РеализацияТоваровУслуг</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Склад" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Склад</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Подготовлено" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подготовлено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Клиент" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Партнеры</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Остаток" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СвободныйОстаток" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Свободный остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВНаличииОстаток" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В наличии остаток</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КОтборуПоЗаданию" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К отбору по заданию</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтбираетсяНаТСД" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбирается на ТСД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтобраноНаТСД" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отобрано на ТСД</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КОтборуПоЗаданиямПодробнее" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подробнее</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К отбору по заданиям подробнее</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КОтборуПоЗаданиямПодробнее</Action>
+		</Command>
+		<Command name="ЭмитацияСканера" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эмитация сканера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эмитация сканера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭмитацияСканера</Action>
+		</Command>
+	</Commands>
+</Form>

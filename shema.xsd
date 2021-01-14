@@ -1,0 +1,20 @@
+﻿<xs:schema xmlns:tns="http://www.sample-package.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sample-package.org" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:simpleType name="Денежный">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="19"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="СписокТоваров">
+		<xs:sequence>
+			<xs:element name="Товары" type="tns:Товар" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Товар">
+		<xs:sequence>
+			<xs:element name="Наименование" type="xs:string"/>
+			<xs:element name="Услуга" type="xs:boolean"/>
+			<xs:element name="ЦенаПродажи" type="tns:Денежный"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
